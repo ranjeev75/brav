@@ -4,15 +4,16 @@ This task was completed using [Create React App](https://facebook.github.io/reac
 Build a shopping cart that and client component that allows specified products to be listed and to add and remove them from a shopping basket. 
 - Adding and removing to and from the basket makes a POST/GET request to update a 'customer' shopping basket. In lieu of a data store - an array is used during the life of the server.
 - Users can view their basket by clicking on the 'Bag' link on the right hand-side of the app.
-- On the home page customers can add to basket and on the shoppinggbag page they can remove items from the basket - these actions update their array on the server.
+- On the home page customers can add to basket and on the shopping bag page they can remove items from the basket - these actions update their array on the server.
 
 #Assumptions
-- The application is built in Node.js using the Express framework. Can be [installed here](https://nodejs.org/en/download/).
-- Local storage maintains the basket count and button selection on the /api home page.
-- GET is used to get products for the /api and /shoppingbag pages.
+- The application is built in Node.js using the Express framework, it can be [installed here](https://nodejs.org/en/download/).
+- Local storage maintains the basket count and button selection on the home page.
+- GET is used to get products for the **/api** and **/shoppingbag** pages.
 - POST is used to add and delete items from the basket.
 - We have two separate servers; one runs the React frontend and the Express server processes all API calls.
 - Both run concurrently to use the application.
+- Developed using the Chrome browser Version 53.0.2785.143 m
 
 ##Installation and setup
 
@@ -30,7 +31,7 @@ Build a shopping cart that and client component that allows specified products t
 
 1. Run an instance of the API server by running the command: ```npm run server``` from the /brav directory. The console should show the server is running as **Server started: http://localhost:3001/**.
 2. Run an instance of the React server by running the command in a second console: ```cd shoppingcart npm run start``` from the /brav directory. The console should show the server is running as **The app is running at:http://localhost:3000/**.
-3. Open [http://localhost:3000/api](http://localhost:3000/api) to view it in the browser.
+3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 

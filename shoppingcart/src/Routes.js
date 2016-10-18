@@ -8,9 +8,9 @@ import NotFound from './404.js';
 export default function Routes(props){
     return (
         <Router {...props}>
-            <Route path='/api' component={Main}>
+            <Route path='/' component={Main}>
                 <IndexRoute component={App} />
-                <Route path='/api/shoppingbag' component={Bag} />
+                <Route path='/shoppingbag' component={Bag} />
                 <Route path='*' component={NotFound} />
             </Route>
         </Router>

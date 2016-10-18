@@ -15,7 +15,7 @@ class Buy extends React.Component {
         Purchase.Action(this.props.data,'buy');
     }
 
-    //Check if product id in localstorage
+    //Check if product id in lo
     check(id){
         var fromLocal = JSON.parse(localStorage.getItem('items')) || [];
         if(fromLocal.indexOf(id) === -1){

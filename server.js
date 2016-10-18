@@ -10,7 +10,7 @@ var shopping_bag = [];
 
 app.set('port', (process.env.PORT || 3001));
 
-app.use('/', express.static(path.join(__dirname, 'views')));
+//app.use('/', express.static(path.join(__dirname, 'views')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -32,13 +32,14 @@ app.get('/api', function(req, res) {
     });
 });
 
-app.post('/api', function(req) {
+app.post('/api', function(req,res) {
         fs.readFile(PRODUCT_FILE, function (err, data) {
             if (err) {
                 console.error(err);
                 process.exit(1);
             }
             shopping_bag = utils.getBag(req.body.item, shopping_bag, data);
+            res.json(shopping_bag);
         });
 });
 
