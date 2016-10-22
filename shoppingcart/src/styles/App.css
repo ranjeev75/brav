@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+
+.tableAlign{
+    text-align: left;
+}
+
+.table {
+    border-bottom:0 !important;
+}
+
+.table th, .table td {
+    border: 1px !important;
+}
+
+.fixed-table-container {
+    border:0 !important;
+}

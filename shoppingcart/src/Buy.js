@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import Purchase from './Purchase';
+import Purchase from './utilsFuncs/Purchase';
 
 class Buy extends React.Component {
     constructor(props) {

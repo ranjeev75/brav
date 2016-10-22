@@ -1,28 +1,28 @@
-var fs = require('fs');
-var path = require('path');
-var express = require('express');
-var bodyParser = require('body-parser');
-var utils = require('./utils.js');
-var app = express();
+"use strict";
+import fs from 'fs';
+import path from 'path';
+import express from 'express';
+import bodyParser from 'body-parser';
+import utils from'./utils.js';
+const app = express();
 
-var PRODUCT_FILE = path.join(__dirname, 'products.json');
-var shopping_bag = [];
+const PRODUCT_FILE = path.join(__dirname, 'products.json');
+let shopping_bag = [];
 
 app.set('port', (process.env.PORT || 3001));
 
-//app.use('/', express.static(path.join(__dirname, 'views')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
     // Set permissive CORS header - this allows this server to be used only as
     // an API server in conjunction with something like webpack-dev-server.
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
 });
 
-app.get('/api', function(req, res) {
-    fs.readFile(PRODUCT_FILE, function(err, data) {
+app.get('/api',(req, res) => {
+    fs.readFile(PRODUCT_FILE,(err, data) => {
         if(err) {
             console.error(err);
             process.exit(1);
@@ -32,8 +32,8 @@ app.get('/api', function(req, res) {
     });
 });
 
-app.post('/api', function(req,res) {
-        fs.readFile(PRODUCT_FILE, function (err, data) {
+app.post('/api',(req,res) => {
+        fs.readFile(PRODUCT_FILE,(err, data) => {
             if (err) {
                 console.error(err);
                 process.exit(1);
@@ -43,16 +43,16 @@ app.post('/api', function(req,res) {
         });
 });
 
-app.get('/api/shoppingbag', function(req, res) {
+app.get('/api/shoppingbag',(req, res) => {
     res.json(shopping_bag);
 });
 
-app.post('/api/shoppingbag', function(req, res) {
+app.post('/api/shoppingbag',(req, res) => {
     shopping_bag = utils.delBag(req.body.item, shopping_bag);
     res.json(shopping_bag);
 
 });
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'),() => {
     console.log('Server started: http://localhost:' + app.get('port') + '/');
 });

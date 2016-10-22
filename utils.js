@@ -11,10 +11,9 @@ var helpers = {
         return x;
     },
     delBag:(a,b) => {
-        z =  b.filter(function(item) {
+        return b.filter(function(item) {
             return item.id !== a;
         });
-        return z;
     }
 };
 

@@ -6,26 +6,26 @@ function Action(query,action) {
         axios.post('/api', {
             item: query
         })
-            .then(function (response) {
+            .then((response) => {
                 //console.log(response.data);
-                var localStore = JSON.parse(localStorage.getItem('items')) || [];
+                let localStore = JSON.parse(localStorage.getItem('items')) || [];
                 localStore.push(query);
                 localStorage.setItem('items', JSON.stringify(localStore));
             })
-            .catch(function (error) {
+            .catch((error) => {
                 console.log(error);
             });
     }else{
         axios.post('/api/shoppingbag', {
             item: query
         })
-            .then(function (response) {
+            .then((response) => {
                 //console.log(response.data);
-                var localStoreDel = JSON.parse(localStorage.getItem('items'));
+                let localStoreDel = JSON.parse(localStorage.getItem('items'));
                 localStoreDel.splice(localStoreDel.indexOf(query), 1);
                 localStorage.setItem('items', JSON.stringify(localStoreDel));
             })
-            .catch(function (error) {
+            .catch((error) => {
                 console.log(error);
             });
     }

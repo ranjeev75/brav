@@ -1,23 +1,23 @@
 import React from 'react';
-//import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
 import axios from 'axios';
 import AllProducts from './AllProducts.js';
 
-const App = React.createClass({
-    getInitialState:function(){
-        return {
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
             items: []
         };
-    },
-    componentWillMount:function(){
+    }
+    componentWillMount(){
         axios.get('/api')
             .then(function(response) {
                 this.setState({
                     items: this.state.items.concat(response.data)
                 })
             }.bind(this));
-    },
+    }
     render() {
         return (
           <div className="App">
@@ -25,6 +25,6 @@ const App = React.createClass({
           </div>
         );
   }
-});
+}
 
 export default App;
