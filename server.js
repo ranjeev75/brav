@@ -9,7 +9,7 @@ const app = express();
 const PRODUCT_FILE = path.join(__dirname, 'products.json');
 let shopping_bag = [];
 
-app.set('port', (process.env.PORT || 3001));
+app.set('port', 3001);
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));

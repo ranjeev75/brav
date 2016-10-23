@@ -29,8 +29,12 @@ Build a shopping cart that and client component that allows specified products t
 
 ##Run Application
 
-1. Run an instance of the API server by running the command: ```npm run server``` from the /brav directory. The console should show the server is running as **Server started: http://localhost:3001/**.
-2. Run an instance of the React server by running the command in a second console: ```cd shoppingcart npm run start``` from the /brav directory. The console should show the server is running as **The app is running at:http://localhost:3000/**.
+1. Open a terminal window and in the 'brav' directory run command **npm start**. This will run both the API and React servers at once. In your browser F5 to refresh and get all product data down when server first runs.
+
+     **Or to run servers individually:**
+
+1. Run an instance of the API server by running the command: ```npm run start1``` from the /brav directory. The console should show the server is running as **Server started: http://localhost:3001/**.
+2. Run an instance of the React server by running the command in a second console: ```cd shoppingcart npm run start``` from the /brav directory. The console should show the server is running as **The app is running at: http://localhost:3000/**.
 3. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 

@@ -1,2 +1,2 @@
-web: CD shoppingcart && react-scripts start
-api: nodemon server.js
+web: cd shoppingcart && npm start
+api: npm run start1
